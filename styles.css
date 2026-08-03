@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #070d0a;
   --bg-soft: #0e1813;
   --surface: #152019;
@@ -867,6 +867,7 @@ td {
   box-shadow: 0 12px 32px rgba(37, 191, 99, 0.4);
 }
 
+/* ===== Responsive — tablet ===== */
 @media (max-width: 1080px) {
   .why-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -877,8 +878,13 @@ td {
   .promo-grid {
     grid-template-columns: 1fr;
   }
+
+  .about-details .split-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
+/* ===== Responsive — small tablet / large phone ===== */
 @media (max-width: 880px) {
   .nav-toggle {
     display: inline-flex;
@@ -887,7 +893,7 @@ td {
 
   .site-nav {
     position: absolute;
-    top: 78px;
+    top: 100%;
     left: 4%;
     right: 4%;
     flex-direction: column;
@@ -897,6 +903,7 @@ td {
     border-radius: 14px;
     padding: 10px;
     display: none;
+    box-shadow: var(--shadow);
   }
 
   .site-nav.open {
@@ -904,19 +911,29 @@ td {
   }
 
   .site-nav a {
-    padding: 12px 14px;
+    padding: 14px 16px;
   }
 
   .mini-contact {
     display: none;
   }
 
+  .header-wrap {
+    min-height: 64px;
+    padding: 6px 0;
+  }
+
+  .hero {
+    padding: 56px 0 28px;
+  }
+
   .hero-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .hero-strip img {
-    height: 140px;
+    height: 130px;
   }
 
   .why-grid {
@@ -929,6 +946,7 @@ td {
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   .section-head {
@@ -937,22 +955,279 @@ td {
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(1.75rem, 6.5vw, 2.6rem);
   }
 
   .hero-actions .btn,
-  .video-actions .btn {
+  .video-actions .btn,
+  .cta-inner .btn {
     width: 100%;
+  }
+
+  .page-hero {
+    padding: 56px 0 36px;
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  .product-card img {
+    height: 200px;
+  }
+
+  .gallery-item img {
+    height: 190px;
   }
 }
 
+/* ===== Responsive — phone ===== */
 @media (max-width: 560px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    width: min(100%, 92%);
+  }
+
   .section {
-    padding: 56px 0;
+    padding: 44px 0;
+  }
+
+  .header-wrap {
+    min-height: 58px;
+    gap: 10px;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  .logo-text strong {
+    font-size: 0.92rem;
+  }
+
+  .logo-text small {
+    font-size: 0.68rem;
+  }
+
+  .nav-toggle {
+    width: 42px;
+    height: 42px;
   }
 
   .hero {
-    padding-top: 60px;
+    padding: 40px 0 24px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.55rem, 7.2vw, 2.1rem);
+    margin: 12px 0 12px;
+  }
+
+  .brands-line {
+    font-size: 0.95rem;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+  }
+
+  .lead {
+    font-size: 0.98rem;
+  }
+
+  .hero-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .hero-strip img {
+    height: 110px;
+    border-radius: 12px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .why-card {
+    padding: 16px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .gallery-item img {
+    height: 140px;
+  }
+
+  .gallery-caption {
+    padding: 10px;
+  }
+
+  .gallery-caption h3 {
+    font-size: 0.86rem;
+  }
+
+  .gallery-caption p {
+    font-size: 0.78rem;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .product-card img {
+    height: 200px;
+  }
+
+  .product-body {
+    padding: 12px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .btn {
+    padding: 13px 16px;
+    font-size: 0.95rem;
+    min-height: 46px;
+  }
+
+  .brand-filters {
+    gap: 6px;
+  }
+
+  .brand-filters button {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+
+  .table-wrap {
+    margin-inline: -2%;
+    width: 104%;
+    border-radius: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 640px;
+  }
+
+  th,
+  td {
+    padding: 11px 10px;
+    font-size: 0.88rem;
+  }
+
+  .mini-btn {
+    padding: 9px 10px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .cta-inner {
+    padding: 28px 16px;
+    border-radius: 16px;
+  }
+
+  .cta-inner h2 {
+    font-size: 1.35rem;
+  }
+
+  .contact-map-wrap,
+  .contact-map-wrap iframe {
+    min-height: 260px;
+  }
+
+  .contact-card {
+    padding: 14px;
+  }
+
+  .promo-grid {
+    gap: 12px;
+  }
+
+  .promo-card {
+    padding: 16px;
+  }
+
+  .page-hero {
+    padding: 44px 0 28px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .footer-grid {
+    padding: 24px 0;
+    gap: 18px;
+  }
+
+  .footer-bottom {
+    padding: 14px 0;
+  }
+
+  .footer-bottom p {
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  .wa-float {
+    right: 12px;
+    left: auto;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    max-width: calc(100vw - 24px);
+    box-shadow: 0 10px 28px rgba(37, 191, 99, 0.45);
+  }
+
+  .modal-card {
+    width: min(100%, 92vw);
+    padding: 18px 16px;
+  }
+
+  .video-grid {
+    gap: 16px;
+  }
+
+  .quick-controls input,
+  .catalog-controls input,
+  .catalog-controls select,
+  .contact-form input,
+  .contact-form textarea {
+    padding: 13px 14px;
+    font-size: 16px;
+  }
+}
+
+/* ===== Very small phones ===== */
+@media (max-width: 380px) {
+  .container {
+    width: min(100%, 94%);
   }
 
   .hero-strip {
@@ -960,54 +1235,19 @@ td {
   }
 
   .hero-strip img {
-    height: 132px;
+    height: 140px;
   }
 
   .gallery-grid {
     grid-template-columns: 1fr;
   }
 
-  .why-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .btn {
-    padding: 12px 14px;
-  }
-
-  .brand-filters button {
-    padding: 8px 10px;
-  }
-
-  .table-wrap {
-    min-width: auto;
-  }
-
-  table {
-    min-width: 0;
-  }
-
-  th,
-  td {
-    padding: 10px 12px;
-  }
-
-  .container {
-    width: min(100%, 94%);
-  }
-
-  .header-wrap {
-    justify-content: space-between;
+  .gallery-item img {
+    height: 180px;
   }
 
   .wa-float {
-    right: 10px;
-    left: 10px;
-    text-align: center;
+    font-size: 0.84rem;
+    padding: 11px 14px;
   }
 }
