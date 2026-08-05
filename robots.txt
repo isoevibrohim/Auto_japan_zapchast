@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://autojapan.dpdns.org/sitemap.xml
