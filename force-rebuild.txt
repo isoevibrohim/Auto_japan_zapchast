@@ -1,1 +1,1 @@
-rebuild trigger 2026-08-06
+rebuild 2026-08-07 00:45 favicon
