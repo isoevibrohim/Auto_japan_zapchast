@@ -42,13 +42,14 @@
   <meta name="geo.position" content="38.5598;68.7738">
   <meta name="ICBM" content="38.5598, 68.7738">
 
-  <!-- Fonts & Styles -->
+  <!-- Performance: preconnect + preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/media/wish-engine-01.jpg" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Structured Data (JSON-LD) for Local Business + Breadcrumbs -->
+  <!-- Structured Data: AutoPartsStore -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -85,14 +86,8 @@
       }
     ],
     "areaServed": [
-      {
-        "@type": "City",
-        "name": "Душанбе"
-      },
-      {
-        "@type": "Country",
-        "name": "Тоҷикистон"
-      }
+      {"@type": "City", "name": "Душанбе"},
+      {"@type": "Country", "name": "Тоҷикистон"}
     ],
     "contactPoint": [
       {
@@ -108,22 +103,66 @@
         "availableLanguage": ["tg", "ru"]
       }
     ],
-    "sameAs": [
-      "https://www.instagram.com/japan_auto_zapchasti"
-    ]
+    "sameAs": ["https://www.instagram.com/japan_auto_zapchasti"]
   }
   </script>
 
+  <!-- BreadcrumbList -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Асосӣ", "item": "https://autojapan.dpdns.org/"}
+    ]
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Асосӣ",
-        "item": "https://autojapan.dpdns.org/"
+        "@type": "Question",
+        "name": "Кадом брендҳои мошинро доред?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Мо запчастҳои оригиналӣ ва аналоги сифатӣ барои Toyota, Honda, Nissan, Mazda, Subaru, Mitsubishi ва Suzuki мефурӯшем."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Кафолат ҳаст?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Бале, кафолати 100% мувофиқат. Агар запчаст мувофиқ наояд, пулро пурра бармегардонем."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Чӣ қадар вақт омода мешавад?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Аксари запчастҳо дар Маркази савдои Политехникум дар давоми 30 дақиқа омода мешаванд."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Суроғаи мағоза куҷост?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Шаҳри Душанбе, Маркази савдои Политехникум. Телефон: +992 777 77 58 77, WhatsApp: +992 985 147 438."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Чӣ тавр фармоиш диҳам?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Шумо метавонед дар WhatsApp (+992 985 147 438) нависед, занг занед ё ба мағоза оед. Мо дар 5 дақиқа ҷавоб медиҳем."
+        }
       }
     ]
   }
@@ -174,10 +213,10 @@
       </div>
 
       <div class="container hero-strip">
-        <img src="assets/media/wish-engine-01.jpg" alt="Мотор ва каропка Toyota Wish — запчасти японӣ дар Душанбе">
-        <img src="assets/media/prius-welfire-stop-01.jpg" alt="Задние стоп Toyota Prius ва Welfire — запчасти японӣ Душанбе">
-        <img src="assets/media/granata-01.jpg" alt="Граната барои Toyota Prius ва Estima — қисмҳои эҳтиётӣ">
-        <img src="assets/media/estima-parts-01.jpg" alt="Запчастҳои Toyota Estima оригиналӣ ва аналоги сифатӣ дар Душанбе">
+        <img src="assets/media/wish-engine-01.jpg" alt="Мотор ва каропка Toyota Wish — запчасти японӣ дар Душанбе" width="400" height="160" fetchpriority="high" decoding="async">
+        <img src="assets/media/prius-welfire-stop-01.jpg" alt="Задние стоп Toyota Prius ва Welfire — запчасти японӣ Душанбе" width="400" height="160" loading="lazy" decoding="async">
+        <img src="assets/media/granata-01.jpg" alt="Граната барои Toyota Prius ва Estima — қисмҳои эҳтиётӣ" width="400" height="160" loading="lazy" decoding="async">
+        <img src="assets/media/estima-parts-01.jpg" alt="Запчастҳои Toyota Estima оригиналӣ ва аналоги сифатӣ дар Душанбе" width="400" height="160" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -194,25 +233,21 @@
             <h3>Нархҳои дастрас</h3>
             <p>Аз бозор арзонтар, фурӯши рост аз мағоза.</p>
           </article>
-
           <article class="why-card">
             <div class="why-icon">✔</div>
             <h3>Кафолат 100%</h3>
             <p>Агар мувофиқ наояд, пулро бармегардонем.</p>
           </article>
-
           <article class="why-card">
             <div class="why-icon">30</div>
             <h3>Дар 30 дақиқа омода</h3>
             <p>Дар Маркази савдои Политехникум зуд омода мекунем.</p>
           </article>
-
           <article class="why-card">
             <div class="why-icon">▶</div>
             <h3>Фото ва видео воқеӣ</h3>
             <p>Ҳамаи молҳо бо акс ва видео аз мағозаи худамон.</p>
           </article>
-
           <article class="why-card">
             <div class="why-icon">∞</div>
             <h3>Таҷрибаи солҳо</h3>
@@ -233,7 +268,6 @@
             <a class="btn btn-light" href="about.html">Дар бораи мо</a>
           </div>
         </div>
-
         <div class="video-frame">
           <video controls preload="metadata" poster="assets/media/estima-parts-02.jpg">
             <source src="assets/media/videoi-magoza.mp4" type="video/mp4">
@@ -259,10 +293,8 @@
           <h2>Каталоги зуд</h2>
           <p>Ҷустуҷӯ кунед ва зуд дар WhatsApp фармоиш диҳед.</p>
         </div>
-
         <div class="quick-controls">
           <input id="quickSearch" type="search" placeholder="Номи запчаст ё моделро нависед...">
-
           <div class="brand-filters" id="quickBrandFilters">
             <button class="active" data-brand="all" type="button">Ҳама</button>
             <button data-brand="Toyota" type="button">Toyota</button>
@@ -274,7 +306,6 @@
             <button data-brand="Suzuki" type="button">Suzuki</button>
           </div>
         </div>
-
         <div class="table-wrap">
           <table>
             <thead>
@@ -288,6 +319,40 @@
             </thead>
             <tbody id="quickTableBody"></tbody>
           </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section (visible + schema) -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Саволҳои маъмул</h2>
+          <p>Ҷавобҳои зуд ба саволҳои аксари муштариён.</p>
+        </div>
+        <div class="about-details">
+          <div class="split-layout">
+            <div class="about-card">
+              <h3>Кадом брендҳоро доред?</h3>
+              <p>Toyota, Honda, Nissan, Mazda, Subaru, Mitsubishi ва Suzuki — запчастҳои оригиналӣ ва аналоги сифатӣ.</p>
+            </div>
+            <div class="about-card">
+              <h3>Кафолат ҳаст?</h3>
+              <p>Бале. Кафолати 100% мувофиқат. Агар мувофиқ наояд, пулро бармегардонем.</p>
+            </div>
+            <div class="about-card">
+              <h3>Чӣ қадар вақт омода мешавад?</h3>
+              <p>Аксари молҳо дар Маркази савдои Политехникум дар 30 дақиқа омода мешаванд.</p>
+            </div>
+            <div class="about-card">
+              <h3>Суроға ва тамос?</h3>
+              <p>Душанбе, Маркази савдои Политехникум. Тел: +992 777 77 58 77 · WhatsApp: +992 985 147 438.</p>
+            </div>
+            <div class="about-card">
+              <h3>Чӣ тавр фармоиш диҳам?</h3>
+              <p>Дар WhatsApp нависед, занг занед ё ба мағоза оед. Мо дар 5 дақиқа ҷавоб медиҳем.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -343,6 +408,6 @@
     Зуд фармоиш диҳед
   </a>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
