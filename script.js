@@ -105,12 +105,14 @@ function makeProducts() {
       const brand = group.brands ? group.brands[(i - 1) % group.brands.length] : group.brand;
       const price = group.basePrice + (i - 1) * group.step;
       const name = `${group.title} (сурат ${i})`;
+      const altText = `${group.title} — ${brand} ${group.model} запчасти японӣ дар Душанбе`;
 
       list.push({
         id: `${group.prefix}-${num}`,
         image: `assets/media/${group.prefix}-${num}.jpg`,
         name,
         shortName: group.title,
+        alt: altText,
         brand,
         model: group.model,
         category: group.category,
@@ -156,7 +158,7 @@ function renderGallery(targetId, items) {
     .map(
       (item) => `
       <article class="gallery-item">
-        <img src="${item.image}" alt="${item.shortName}" loading="lazy">
+        <img src="${item.image}" alt="${item.alt}" loading="lazy">
         <div class="gallery-caption">
           <h3>${item.shortName}</h3>
           <p>${item.brand} • ${item.model}</p>
@@ -253,7 +255,7 @@ function renderCatalogCards(items) {
     .map(
       (item) => `
       <article class="product-card">
-        <img src="${item.image}" alt="${item.name}" loading="lazy">
+        <img src="${item.image}" alt="${item.alt}" loading="lazy">
         <div class="product-body">
           <h3 class="product-title">${item.shortName}</h3>
           <p class="product-meta">${item.brand} • ${item.model}</p>
