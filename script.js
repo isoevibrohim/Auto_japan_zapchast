@@ -158,7 +158,7 @@ function renderGallery(targetId, items) {
     .map(
       (item) => `
       <article class="gallery-item">
-        <img src="${item.image}" alt="${item.alt}" loading="lazy">
+        <img src="${item.image}" alt="${item.alt}" loading="lazy" decoding="async">
         <div class="gallery-caption">
           <h3>${item.shortName}</h3>
           <p>${item.brand} • ${item.model}</p>
@@ -255,7 +255,7 @@ function renderCatalogCards(items) {
     .map(
       (item) => `
       <article class="product-card">
-        <img src="${item.image}" alt="${item.alt}" loading="lazy">
+        <img src="${item.image}" alt="${item.alt}" loading="lazy" decoding="async">
         <div class="product-body">
           <h3 class="product-title">${item.shortName}</h3>
           <p class="product-meta">${item.brand} • ${item.model}</p>
